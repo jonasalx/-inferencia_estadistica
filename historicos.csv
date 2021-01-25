@@ -1,0 +1,71 @@
+edad,genero,estatura,peso,nicotina
+21,Mujer,161.2,64.6,Nunca lo ha usado
+21,Hombre,192.3,97.6,Nunca lo ha usado
+22,Mujer,158.2,57.8,Nunca lo ha usado
+22,Hombre,174.9,85.8,Nunca lo ha usado
+23,Mujer,156.6,56.4,Nunca lo ha usado
+23,Hombre,176.6,78.2,Nunca lo ha usado
+24,Mujer,155.2,64.5,Lo ha usado
+24,Hombre,175.7,75.4,Nunca lo ha usado
+25,Mujer,158.5,71.6,Lo ha usado
+25,Hombre,186.8,95.0,Lo ha usado
+26,Mujer,150.7,53.6,Lo ha usado
+26,Hombre,178.6,88.2,Nunca lo ha usado
+27,Mujer,164.7,80.8,Lo ha usado
+27,Hombre,186.7,89.4,Nunca lo ha usado
+28,Mujer,155.0,53.2,Nunca lo ha usado
+28,Hombre,174.6,80.0,Lo ha usado
+29,Mujer,153.1,62.7,Lo ha usado
+29,Hombre,174.1,71.6,Lo ha usado
+30,Mujer,164.9,71.3,Nunca lo ha usado
+30,Hombre,189.7,84.1,Lo ha usado
+31,Mujer,169.3,72.3,Nunca lo ha usado
+31,Hombre,186.5,86.9,Nunca lo ha usado
+32,Mujer,157.0,63.9,Nunca lo ha usado
+32,Hombre,174.5,72.2,Nunca lo ha usado
+33,Mujer,170.2,74.1,Nunca lo ha usado
+33,Hombre,181.6,92.3,Nunca lo ha usado
+34,Mujer,161.4,67.0,Nunca lo ha usado
+34,Hombre,185.7,90.7,Nunca lo ha usado
+35,Mujer,166.2,70.6,Lo ha usado
+35,Hombre,161.8,71.7,Lo ha usado
+36,Mujer,157.7,64.3,Nunca lo ha usado
+36,Hombre,170.0,74.8,Nunca lo ha usado
+37,Mujer,165.5,70.7,Lo ha usado
+37,Hombre,182.6,73.5,Lo ha usado
+38,Mujer,162.6,65.8,Lo ha usado
+38,Hombre,173.5,73.2,Nunca lo ha usado
+39,Mujer,164.8,78.1,Nunca lo ha usado
+39,Hombre,182.5,71.8,Lo ha usado
+40,Mujer,156.6,68.6,Nunca lo ha usado
+40,Hombre,184.6,94.3,Lo ha usado
+41,Mujer,163.4,57.6,Nunca lo ha usado
+41,Hombre,178.5,79.5,Lo ha usado
+42,Mujer,160.0,57.8,Lo ha usado
+42,Hombre,183.4,77.4,Lo ha usado
+43,Mujer,168.0,65.6,Lo ha usado
+43,Hombre,177.9,73.0,Lo ha usado
+44,Mujer,165.5,66.8,Nunca lo ha usado
+44,Hombre,170.6,71.5,Nunca lo ha usado
+45,Mujer,166.2,76.5,Nunca lo ha usado
+45,Hombre,176.9,78.4,Lo ha usado
+46,Mujer,163.6,66.6,Nunca lo ha usado
+46,Hombre,183.0,79.8,Nunca lo ha usado
+47,Mujer,165.4,64.2,Nunca lo ha usado
+47,Hombre,178.1,84.4,Nunca lo ha usado
+48,Mujer,159.4,62.3,Nunca lo ha usado
+48,Hombre,173.5,72.3,Nunca lo ha usado
+49,Mujer,155.8,68.3,Lo ha usado
+49,Hombre,174.1,78.0,Nunca lo ha usado
+50,Mujer,154.8,62.2,Lo ha usado
+50,Hombre,182.6,81.4,Nunca lo ha usado
+51,Mujer,161.6,67.5,Lo ha usado
+51,Hombre,179.1,69.2,Lo ha usado
+52,Mujer,170.4,70.5,Lo ha usado
+52,Hombre,181.8,64.9,Nunca lo ha usado
+53,Mujer,167.0,78.4,Lo ha usado
+53,Hombre,177.8,85.5,Nunca lo ha usado
+54,Mujer,159.8,59.4,Nunca lo ha usado
+54,Hombre,174.0,82.5,Nunca lo ha usado
+55,Mujer,160.7,64.5,Nunca lo ha usado
+55,Hombre,171.8,63.7,Lo ha usado
