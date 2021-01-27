@@ -1,11 +1,13 @@
-#INFERENCIA ESTADISTICA
-#JONATHAN  ULLOA
+#         INFERENCIA ESTADISTICA
+#         JONATHAN  ULLOA
+
 
 #install.packages("TeachingDemos")
 #install.packages("car")
 library(tidyverse)
 library(TeachingDemos) 
 library(car)
+
 
 #Ejercicio 1
 #Las ventas semanales (en miles de unidades) de un producto en 16 supermercados con características similares 
@@ -24,7 +26,9 @@ t.test(ventas$value, conf.level = 0.95)
 
 #para validar aun mas las ventas medias... no son superiores a 100 mil unidades
 #especifico la media que quiero poner a prueba
-t.test(ventas$value,  mu=100)
+t.test(ventas$value,  mu=100, conf.level = 0.95)
+
+#Las ventas medias no son superiores a 100 mil unidades
 
 
 # (B)
@@ -33,7 +37,7 @@ t.test(ventas$value,  mu=100)
 
 
 z.test(ventas$value, sd=sd, conf.level = 0.94) 
-# [ 97.49183 , 99.00817 ]
+# el intervalo de confianza al 94%  es  [ 97.49183 , 99.00817 ]
 
 
 # (C)
@@ -47,7 +51,7 @@ sigma <- 1.61                    #sd ?? 1.61
 E = 0.2                       #margen error
 zstar^2 ∗ sigma^2/ E^2 
 
-#175.326
+# 175.326
 # Se debe considerar un tamaño muestral de 175 con una confianza del 90% y un margen de error de 0.2
 
 
@@ -57,13 +61,14 @@ shapiro.test(ventas$value)
 #Como el p valor (0.7031) es mayor a alfa (0,05), no se rechaza la hipótesis nula (H0), por lo tanto, 
 #la variable “value” presenta un comportamiento normal
 
-library(car)
 qqPlot(ventas$value)
 
 
 #Conclusiones
 #Las ventas medias no son superiores a 100 mil unidades semanales, 
-#para aumentar la confianza se debe aumentar significativamente el tamaño de la muestra.
+#y para aumentar la confianza se debe aumentar significativamente el tamaño de la muestra.
+
+
 
 
 
@@ -100,17 +105,14 @@ n <- zstar^2 ∗ p ∗ (1−p) / Error^2
 #de uso de nicotina. Use un nivel de significancia del 5%.
 
 yes_nicotina<- historicos[historicos$nicotina=="Lo ha usado", ]
-no_nicotina<- historicos[historicos$nicotina=="Nunca lo ha usado",
-]
+no_nicotina<- historicos[historicos$nicotina=="Nunca lo ha usado",]
 
-var.test(yes_nicotina$peso, calificaciones$despues, conf.level = 0.95)
+var.test(yes_nicotina$peso, no_nicotina$peso, conf.level = 0.95)
 #para nuestro test las varianzas son iguales (p-value > significancia)
-#0.3503 > 0.05
+#0.4061 > 0.05
 
 
-
-
-t.test(x=yes_nicotina$peso, y=no_nicotina$peso, var.equal = FALSE, conf.level = 0.95)
+t.test(x=yes_nicotina$peso, y=no_nicotina$peso, var.equal = T, conf.level = 0.95)
 #Existe una diferencia, pero no son significativas
 
 #Recuerde en el caso c:
@@ -130,12 +132,11 @@ var.test(yes_nicotina$peso, no_nicotina$peso)
 
 #conclusión
 
-#Con un 95% de confianza, las diferencias pormedio de pesos entre "fumadores y no fumadores" 
-#se encuentra entre ( -6.185464  3.536684), como el cero está incluido,,, 
-#se puede concluir que no hay diferencias en los pesos según sus habitos de fumador
+#Con un 95% de confianza, el intervalo de confianza para el pormedio de pesos entre "fumadores y no fumadores" 
+#se encuentra entre ( -6.310189  3.661409 )
 
-
-
+#dado p-value = 0.5978 > 0.05, entonces aporbamos la H0 
+#se puede concluir que no hay diferencias significativas en los pesos según sus habitos de fumador
 
 
 
@@ -149,6 +150,12 @@ var.test(yes_nicotina$peso, no_nicotina$peso)
 #anotando cuáles son defectuosos. A partir de estos datos, recogidos en el archivo articulo 
 #¿existe evidencia de que las proporciones de defectuosos de ambas máquinas son distintas?. 
 #Asuma normalidad de los datos.
+
+#hipótesis a probar
+
+Ho: p1 - p2 = 0
+H1: p1 - p2 != 0
+
 
 articulo  <- read_csv("articulo.csv")
 head(articulo)
@@ -178,7 +185,7 @@ prop.test(x=c(k1, k2), n=c(n1, n2), conf.level = 0.9)
 #si observamos el valor-p= 0.07846 < 0.1 por lo tanto se rechaza Ho
 
 
-#la probabilidad de que ambar proporciones sean iguales es MUY baja
+#la probabilidad de que ambas proporciones sean iguales es MUY baja
 #Como el valor-P es mayor que  alpha no se rechaza la hipótesis nula 
 #y se concluye que no hay evidencias suficientes para rechazar la hipótesis nula
 
@@ -203,16 +210,6 @@ z.alpha = qnorm(1−alpha)
 
 #a partir de 
 #-1.644854
-
-
-#Recuerde:
-#platee la hipótesis a probar
-
-Ho: p1 - p2 = 0
-H1: p1 - p2 != 0
-
-
-#Conclusión.
 
 
 
@@ -258,21 +255,18 @@ var.test(calificaciones$antes, calificaciones$despues)
 #¿Existe evidencia de que con la asistencia al curso la calificación media aumenta más de cinco puntos? 
 #Use un 10% de significancia y luego un 5% de significancia. Comente los resultados.
 
-t.test(calificaciones$antes, calificaciones$despues, mu=5, var.equal=F, conf.level = 0.90)
-t.test(calificaciones$antes, calificaciones$despues, mu=5, var.equal=F, conf.level = 0.95)
+t.test(calificaciones$antes, calificaciones$despues, mu=0, var.equal=F, conf.level = 0.90)
 
+t.test(calificaciones$antes, calificaciones$despues, mu=0, var.equal=F, conf.level = 0.95)
 
-
+#para ambos casos
+#con p-value = 0.003561 < 0.05 y 0.1 rechazamos la hipótesis nula y podemos decir que existen diferencias significativas entre ambas
+#ademas se puede apreciar que para ambos casos, la calificación media aumenta más de cinco puntos
 
 
 #Con los resultados obtenidos en a. ¿A partir de que valor de α se rechazaría H0?
 
 
 
-#Recuerde: Analizar supuestos antes de probar la hipótesis y no olvide plantear la hipótesis.
+#Recuerde: Analizar supuestos antes de probar la hipótesis.
 
-
-
-#OJO
-#Para poder utilizar una prueba de t de student 
-#a) Que se ajuste a una distribución normal, b) La independencia de los datos y c) La homogeneidad de varianzas,
